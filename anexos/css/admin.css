@@ -1,0 +1,40 @@
+.admin-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.admin-edit-form input[type="text"],
+.admin-edit-form input[type="number"],
+.admin-edit-form textarea {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.admin-edit-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.admin-edit-form input[type="file"] {
+    padding: 8px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.admin-save-btn {
+    background-color: #036600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-save-btn:hover {
+    background-color: #008807;
+}

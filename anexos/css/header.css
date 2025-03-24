@@ -1,0 +1,222 @@
+:root {
+    --primary-color: #007bff;
+    --text-color: #333;
+    --background-color: #fff;
+    --hover-color: #0056b3;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: var(--hover-color);
+}
+
+.hambur {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.hambur span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.usuario-info{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+}
+
+.admin-color {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color);
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hambur {
+        display: block;
+    }
+
+    .hambur.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hambur.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hambur.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #660030;
+    color: white;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 15px;
+}
+
+.footer-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.footer-section p {
+    margin: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-section i {
+    margin-right: 8px;
+    width: 16px;
+    text-align: center;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section li {
+    margin-bottom: 8px;
+    margin: 5px 10px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+.footer-section h3:hover{
+    opacity: 0.8;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.footer-section a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    background-color: #4d0023;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fredes-sociales {
+    display: flex;
+    gap: 15px;
+}
+
+.fredes-sociales a img {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.5s;
+    border-radius: 50%;
+}
+
+.fredes-sociales a:hover img {
+    opacity: 0.8;
+}

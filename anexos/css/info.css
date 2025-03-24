@@ -1,0 +1,233 @@
+/* Estilos para la página Sobre Nosotros */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: justify;
+}
+
+.info-contenedor {
+    margin-top: 70px;
+}
+
+.caja2-section {
+    background-image: url('../imagenes/vinosyura.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.caja2-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.caja2-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.caja2-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.caja2-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.historia-section {
+    display: flex;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.historia-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.historia-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.valor-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.valor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.valor-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.valor-item:hover {
+    transform: translateY(-5px);
+}
+
+.valor-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.valor-item h3 {
+    color: #660030;
+    margin: 10px 0;
+}
+
+.valor-item p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.historia-image img, .valor-image img {
+    width: 85%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.historia-content h2, 
+.valor-content h2, 
+.proceso-section h2, 
+.futuro-section h2,
+.valor-section h2 {
+    color: #660030;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.historia-content p, .futuro-section p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.proceso-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.proceso-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.proceso-step {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.proceso-step:hover {
+    transform: translateY(-10px);
+}
+
+.step-icon {
+    font-size: 2rem;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #660030;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.step-icon i {
+    font-size: 2rem;
+}
+
+.proceso-step h3 {
+    margin-bottom: 10px;
+    color: #660030;
+}
+
+.proceso-step p {
+    color: #666;
+}
+
+.valor-item {
+    margin-bottom: 25px;
+}
+
+.valor-item h3 {
+    color: #660030;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.valor-item p {
+    margin: 0;
+    color: #666;
+}
+
+.futuro-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px 60px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .historia-section {
+        flex-direction: column;
+    }
+
+    .valor-section {
+        flex-direction: column;
+    }
+
+    .proceso-step {
+        min-width: 200px;
+    }
+
+    .caja2-content h1 {
+        font-size: 2.5rem;
+    }
+}
