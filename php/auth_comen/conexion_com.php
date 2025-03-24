@@ -1,5 +1,5 @@
 <?php
-$conexion = new PDO("mysql:host=sql305.infinityfree.com;dbname=if0_38584302_havcana_db", "if0_38584302", "u5x0DWHfc6l");
+$conexion = new PDO("mysql:host=localhost;dbname=havcana_db", "root", "");
 
 try {
     $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -7,3 +7,4 @@ try {
     die("Error de conexión: " . $e->getMessage());
 }
 ?>
+

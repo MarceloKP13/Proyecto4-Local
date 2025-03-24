@@ -2,12 +2,10 @@
 session_start();
 include 'auth/conexion_be.php';
 
-// Inicializar el carrito si no existe
 if (!isset($_SESSION['carrito'])) {
     $_SESSION['carrito'] = [];
 }
 
-// Procesar acciones del carrito
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
     $accion = $_POST['accion'];
 
@@ -15,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
         $producto_id = (int)$_POST['producto_id'];
         $cantidad = (int)$_POST['cantidad'];
 
-        // Obtener información del producto de la base de datos
         $query = "SELECT * FROM productos WHERE id = ?";
         $stmt = $conexion->prepare($query);
         $stmt->bind_param("i", $producto_id);
@@ -23,18 +20,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
         $result = $stmt->get_result();
 
         if ($producto = $result->fetch_assoc()) {
-            // Calcular precio según cantidad (precio especial por docena)
             $precio_unitario = $producto['precio'];
             if ($cantidad >= 12) {
-                // Aplicar descuento por docena
                 $precio_unitario = strpos(strtolower($producto['nombre']), 'manzana') !== false ? 3.85 : 7.75;
             }
 
-            // Verificar si ya existe en el carrito
             $existe = false;
             foreach ($_SESSION['carrito'] as $index => $item) {
                 if ($item['id'] === $producto_id) {
-                    // Actualizar cantidad y recalcular precio si es necesario
                     $nueva_cantidad = $item['cantidad'] + $cantidad;
                     $nuevo_precio = ($nueva_cantidad >= 12) ? 
                         (strpos(strtolower($producto['nombre']), 'manzana') !== false ? 3.85 : 7.75) :
@@ -62,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
 
         if (isset($_SESSION['carrito'][$index])) {
             if ($cantidad > 0) {
-                // Recalcular precio según nueva cantidad
                 $producto_id = $_SESSION['carrito'][$index]['id'];
                 $query = "SELECT * FROM productos WHERE id = ?";
                 $stmt = $conexion->prepare($query);
@@ -95,7 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
     exit;
 }
 
-// Calcular totales
 $subtotal = 0;
 $envio = 5.00;
 $total = 0;
