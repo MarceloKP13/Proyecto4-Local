@@ -38,3 +38,33 @@
 .admin-save-btn:hover {
     background-color: #008807;
 }
+.product-comment {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.eliminar-comentario {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.eliminar-comentario:hover {
+    background-color: #cc0000;
+}
+
+.eliminar-comentario i {
+    font-size: 14px;
+}

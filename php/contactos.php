@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-// Procesar el formulario si se ha enviado
 $mensaje_enviado = false;
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_contacto'])) {
     $mensaje_enviado = true;
 }
 
-// Procesar formulario de comentarios
 $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_enviado'] == 'true';
 ?>
 
@@ -22,8 +20,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
     <link rel="stylesheet" href="../anexos/css/header.css">
     <link rel="stylesheet" href="../anexos/css/boton.css">
     <link rel="stylesheet" href="../anexos/css/contactos.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../anexos/css/admin.css">
 </head>
 <body>
     <header class="header">
@@ -256,10 +253,12 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                         FROM comentarios c 
                         WHERE c.tipo_comentario = 'producto' 
                         ORDER BY c.fecha DESC";
-                $result = $conexion->query($sql);
+                $stmt = $conexion->prepare($sql);
+                $stmt->execute();
+                $comentarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                if ($result && $result->num_rows > 0) {
-                    while ($comentario = $result->fetch_assoc()) {
+                if (count($comentarios) > 0) {
+                    foreach ($comentarios as $comentario) {
                         echo '<div class="product-comment">';
                         if (isset($_SESSION['es_admin']) && $_SESSION['es_admin']) {
                             echo '<button class="eliminar-comentario" onclick="deleteComment(' . $comentario['id'] . ')" title="Eliminar comentario"><i class="fas fa-times"></i></button>';

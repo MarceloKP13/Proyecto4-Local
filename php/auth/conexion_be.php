@@ -1,7 +1,8 @@
 <?php
-$conexion = mysqli_connect("localhost", "root", "", "havcana_db");
-
-if (!$conexion) {
-    die("Error de conexión: " . mysqli_connect_error());
+try {
+    $conexion = new PDO("mysql:host=localhost;dbname=havcana_db", "root", "");
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    die("Error de conexión: " . $e->getMessage());
 }
 ?>

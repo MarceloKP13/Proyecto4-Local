@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'auth/conexion_be.php';
-// Obtener la lista de productos de la base de datos
+
 $result = mysqli_query($conexion, "SELECT * FROM productos");
 $productos = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
