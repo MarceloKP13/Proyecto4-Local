@@ -39,13 +39,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function toggleFaq(index) {
-    const answer = document.getElementById(`faq-answer-${index}`);
-    const questions = document.querySelectorAll('.faq-question');
-    const answers = document.querySelectorAll('.faq-answer');
+    const answer = document.getElementById(`preguntas-answer-${index}`);
+    const questions = document.querySelectorAll('.preguntas-question');
+    const answers = document.querySelectorAll('.preguntas-answer');
 
     if (!answer || !questions[index]) return;
 
-    // Cerrar todas las respuestas excepto la actual
     answers.forEach((ans, i) => {
         if (i !== index) {
             ans.classList.remove('active');

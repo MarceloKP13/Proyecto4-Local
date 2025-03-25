@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
+    const hamburger = document.querySelector('.hambur');
     const navMenu = document.querySelector('.nav-menu');
     
     // Toggle menu on hambur click

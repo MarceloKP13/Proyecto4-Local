@@ -6,63 +6,6 @@ body {
     color: #333;
 }
 
-.cabecera {
-    background-color: var(--background-color);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
-
-.contenedor-cabecera {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 20px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo img {
-    height: 40px;
-}
-
-.nombre-marca {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.menu-nav {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu-nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.menu-nav a:hover {
-    color: var(--primary-color);
-}
-
-.contactod {
-    margin-right: 10px;
-}
-
 .contacto-contenedor {
     margin-top: 70px;
 }
