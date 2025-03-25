@@ -1,5 +1,3 @@
-mysqli_close($conexion);
-?>
 <?php
 require_once 'conexion_com.php';
 
@@ -8,16 +6,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $tipo = $_POST['tipo_comentario'];
     $comentario = $_POST['comentario'];
 
-    try {
-        $stmt = $conexion->prepare("INSERT INTO comentarios (nombre, tipo_comentario, comentario) VALUES (?, ?, ?)");
-        $stmt->execute([$nombre, $tipo, $comentario]);
-
+    $sql = "INSERT INTO comentarios (nombre, tipo_comentario, comentario) VALUES (:nombre, :tipo, :comentario)";
+    $stmt = $conexion->prepare($sql);
+    
+    $stmt->bindParam(':nombre', $nombre);
+    $stmt->bindParam(':tipo', $tipo);
+    $stmt->bindParam(':comentario', $comentario);
+    
+    if ($stmt->execute()) {
         header('Location: ../contactos.php?comentario_enviado=true');
         exit();
-    } catch(PDOException $e) {
-        echo "<script>alert('Error al guardar el comentario: " . $e->getMessage() . "'); window.location.href='../contactos.php';</script>";
+    } else {
+        echo "<script>alert('Error al guardar el comentario'); window.location.href='../contactos.php';</script>";
         exit();
     }
 }
 ?>
-
