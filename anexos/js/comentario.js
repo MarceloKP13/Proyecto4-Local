@@ -51,8 +51,7 @@ function toggleFaq(index) {
             questions[i]?.classList.remove('active');
         }
     });
-
-    // Alternar la visibilidad de la respuesta actual
+    
     answer.classList.toggle('active');
     questions[index].classList.toggle('active');
 }

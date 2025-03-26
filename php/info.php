@@ -108,7 +108,7 @@ session_start();
         <section class="valor-section">
             <h2>Nuestros Valores</h2>
             <div class="valor-grid">
-                <div class="value-item">
+                <div class="valor-item">
                     <img src="../anexos/imagenes/humildad.png" alt="Humildad" class="valor-icon">
                     <h3>Humildad</h3>
                     <p>Mantenemos una actitud humilde en nuestro trabajo y relaciones.</p>
