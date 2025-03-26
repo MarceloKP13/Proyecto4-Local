@@ -118,6 +118,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                             <a href="https://wa.me/+593939339269?text=Hola, necesito información sobre sus productos." target="_blank"><img src="../anexos/imagenes/whatsapp2.png" alt="WhatsApp"></a>
                             <a href="https://www.tiktok.com/@emprenderdesde0" target="_blank"><img src ="../anexos/imagenes/tiktok.png" alt="Tik tok"></a>
                             <a href="https://www.instagram.com/havcana8" target="_blank"><img src ="../anexos/imagenes/instagram.png" alt="Tik tok"></a>
+                            <a href="https://www.facebook.com/havcan.ocho.9" target="_blank"><img src="../anexos/imagenes/facebook.png" alt="Facebook"></a>
                         </div>
                     </div>
                 </div>
@@ -305,7 +306,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
         <div class="footer-bottom">
             <p>&copy; 2025 HAVCANA. Todos los derechos reservados.</p>
             <div class="fredes-sociales">
-                <a href="https://www.facebook.com/havcana8" target="_blank"><img src="../anexos/imagenes/facebook.png" alt="Facebook"></a>
+                <a href="https://www.facebook.com/havcan.ocho.9" target="_blank"><img src="../anexos/imagenes/facebook.png" alt="Facebook"></a>
                 <a href="https://www.instagram.com/havcana8" target="_blank"><img src="../anexos/imagenes/instagram.png" alt="Instagram"></a>
                 <a href="https://www.x.com/havcana8" target="_blank"><img src="../anexos/imagenes/x.png" alt="Twitter"></a>
             </div>
