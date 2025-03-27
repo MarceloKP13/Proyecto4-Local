@@ -50,7 +50,7 @@
 
                 <form action="registro_usuario_be.php" method="POST" class="formulario__register">
     <h2>Regístrate</h2>
-    <input type="text" placeholder="Nombre Completo" name="nombre_completo" required>
+    <input type="text" placeholder="Nombre Completo" name="nombre_completo" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" title="Solo se permiten letras y espacios" required>
     <input type="email" placeholder="Correo electrónico" name="correo" required>
     <input type="text" placeholder="Usuario" name="usuario" required>
     <div class="contenedor_contrasena">
