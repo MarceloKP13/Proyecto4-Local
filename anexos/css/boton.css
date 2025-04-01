@@ -1,6 +1,7 @@
 .whatsapp-boton {
     position: fixed;
     bottom: 20px;
+    left: 10px;
     z-index: 1000;
     animation: float 2s ease-in-out infinite;
 }
