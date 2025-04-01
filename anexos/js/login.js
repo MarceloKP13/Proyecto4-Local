@@ -14,7 +14,6 @@ document.getElementById("admin_check").addEventListener("change", function() {
     }
 });
 
-// Variables
 var contenedorLoginRegister = document.querySelector(".contenedor__login-register");
 var formularioLogin = document.querySelector(".formulario__login");
 var formularioRegister = document.querySelector(".formulario__register");

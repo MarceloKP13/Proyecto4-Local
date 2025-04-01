@@ -2,13 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hambur');
     const navMenu = document.querySelector('.nav-menu');
     
-    // Toggle menu on hambur click
     hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', function(event) {
         const isClickInside = navMenu.contains(event.target) || 
                             hamburger.contains(event.target);
@@ -19,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Handle window resize
+    
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
             hamburger.classList.remove('active');
@@ -27,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Add smooth scrolling for anchor links
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -36,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 target.scrollIntoView({
                     behavior: 'smooth'
                 });
-                // Close mobile menu if open
+                
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             }
