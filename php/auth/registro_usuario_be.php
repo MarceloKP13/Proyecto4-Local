@@ -24,7 +24,7 @@ if ($isAdmin) {
 } else {
     $es_admin = 0;
 }
-// Verificar que el correo no se repita
+
 $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo'");
 if (mysqli_num_rows($verificar_correo) > 0) {
     echo '
@@ -35,7 +35,7 @@ if (mysqli_num_rows($verificar_correo) > 0) {
     ';
     exit();
 }
-// Verificar que el usuario no se repita
+
 $verificar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$usuario'");
 if (mysqli_num_rows($verificar_usuario) > 0) {
     echo '
@@ -58,7 +58,7 @@ if ($ejecutar) {
     echo '
         <script>
             alert("Usuario registrado exitosamente.");
-            window.location = "../../index.php"; // Redirigir al index.php
+            window.location = "../../index.php";
         </script>
     ';
 } else {

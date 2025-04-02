@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
-
     <main>
         <div class="contenedor__todo">
             <div class="caja__trasera">
@@ -64,7 +63,7 @@
         <label for="admin_check">¿Eres administrador?</label>
     </div>
     <div id="admin_pin_div" style="display: none;">
-        <input type="text" placeholder="PIN de administrador" name="admin_pin">
+        <input type="number" placeholder="PIN de administrador" name="admin_pin">
     </div>
     <button>Registrarse</button>
 </form>

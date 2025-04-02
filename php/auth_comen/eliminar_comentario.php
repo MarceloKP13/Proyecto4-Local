@@ -1,7 +1,6 @@
 <?php
 session_start();
 include 'conexion_com.php';
-
 header('Content-Type: application/json');
 
 if (!isset($_SESSION['es_admin']) || !$_SESSION['es_admin']) {

@@ -9,15 +9,12 @@ if (!isset($_SESSION['usuario_id'])) {
 
 $usuario_id = $_SESSION['usuario_id'];
 
-// Obtener información del usuario
 $query_usuario = "SELECT * FROM usuarios WHERE id = ?";
 $stmt = $conexion->prepare($query_usuario);
 $stmt->bind_param("i", $usuario_id);
 $stmt->execute();
 $usuario = $stmt->get_result()->fetch_assoc();
 
-
-// Obtener todos los pedidos del usuario actual que no estén eliminados
 $query_pedidos = "SELECT * FROM pedidos WHERE usuario_id = ? AND estado != 'eliminado' ORDER BY fecha_pedido DESC";
 $stmt = $conexion->prepare($query_pedidos);
 $stmt->bind_param("i", $usuario_id);

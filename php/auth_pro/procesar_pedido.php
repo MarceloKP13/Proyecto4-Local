@@ -26,7 +26,6 @@ $total = $subtotal + $envio;
 try {
     mysqli_begin_transaction($conexion);
 
-    // Insertar pedido
     $sql_pedido = "INSERT INTO pedidos (numero_pedido, usuario_id, subtotal, envio, total) 
                    VALUES (?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conexion, $sql_pedido);
@@ -34,7 +33,6 @@ try {
     mysqli_stmt_execute($stmt);
     $pedido_id = mysqli_insert_id($conexion);
 
-    // Insertar detalles del pedido
     foreach ($_SESSION['carrito'] as $item) {
         $sql_detalle = "INSERT INTO detalles_pedido (pedido_id, producto_id, cantidad, precio_unitario) 
                         VALUES (?, ?, ?, ?)";

@@ -11,7 +11,7 @@ if (mysqli_num_rows($validar_login) > 0) {
     $usuario = mysqli_fetch_assoc($validar_login);
     $_SESSION['usuario'] = $usuario['usuario'];
     $_SESSION['es_admin'] = $usuario['es_admin'];
-    $_SESSION['usuario_id'] = $usuario['id']; // Corrected to access 'id' from $usuario
+    $_SESSION['usuario_id'] = $usuario['id'];
 
     if ($usuario['es_admin'] == 1) {
         header("location: ../../index.php");
