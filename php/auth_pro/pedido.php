@@ -82,24 +82,7 @@ $pedidos = $stmt->get_result();
                          onclick="cambiarEstado(<?php echo $pedido['id']; ?>, <?php echo $pedido['estado']; ?>)">
                         Estado: <?php echo $pedido['estado'] == 1 ? 'Pendiente' : 'Realizado'; ?>
                     </div>
-                    <script>
-                    function cambiarEstado(id, estadoActual) {
-                        const nuevoEstado = estadoActual == 1 ? 0 : 1;
-                        fetch('actualizar_estado.php', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/x-www-form-urlencoded',
-                            },
-                            body: `pedido_id=${id}&estado=${nuevoEstado}`
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            if(data.success) {
-                                location.reload();
-                            }
-                        });
-                    }
-                    </script>
+                    
                 </div>
                 <div class="detalles-pedido">
                     <p><strong>Nombre completo:</strong> <?php echo $usuario['nombre_completo']; ?></p>

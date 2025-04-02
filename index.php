@@ -1,6 +1,5 @@
 <?php
     session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -68,7 +67,7 @@
             include 'php/auth/conexion_be.php';
             $result = mysqli_query($conexion, "SELECT nombre, descripcion, imagen FROM productos");
             while ($producto = mysqli_fetch_assoc($result)) {
-                $imagen = str_replace('../', '', $producto['imagen']); // Ajustar la ruta para index.php
+                $imagen = str_replace('../', '', $producto['imagen']);
                 echo '<div class="productos-cartas">';
                 echo '<img src="' . $imagen . '" alt="' . $producto['nombre'] . '">';
                 echo '<h3>' . $producto['nombre'] . '</h3>';
